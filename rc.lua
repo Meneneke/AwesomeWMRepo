@@ -22,6 +22,8 @@ local net_widgets = require("net_widgets")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+awful.util.spawn("xrandr --output eDP-1 --mode 1920x1200")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -151,7 +153,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomesubmenus},
                                   }
                         })
 
-mylauncher = awful.widget.launcher({ image = '/home/peel/Pictures/t.png',
+mylauncher = awful.widget.launcher({ image = '/home/peel/Pictures/Arrow.png',
                                      menu = mymainmenu })
 
 -- Menubar configuration
@@ -684,4 +686,4 @@ beautiful.useless_gap = 10
 --Auto Start Apps
 awful.util.spawn("nm-applet")
 awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("picom")
+
